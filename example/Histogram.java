@@ -53,7 +53,7 @@ public class Histogram {
 	 * Print a histogram
 	 * @param bins the low and high values of the bins, ordered low to high
 	 * @param counts the number of items in each bin
-	 * Note that counts.lenght must equal bins.length - 1
+	 * Note that counts.length must equal bins.length - 1
 	 */
 	public static void printHistogram(double[] bins, int[] counts) {
 		for (int i=0; i<bins.length-1; i++) {
