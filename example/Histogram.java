@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Histogram {
-	
-	
+
+
 	/**
 	 * 
 	 * @param data the data to be displayed as a histogram
@@ -31,7 +31,13 @@ public class Histogram {
 		}
 		return result;
 	}
-	
+
+	/**
+	 *  Print one row of a histogram
+	 * @param binMin the low value of the bin
+	 * @param binMax the high value of the bin
+	 * @param count the number of values in the bin
+	 */
 	public static void printBin(double binMin, double binMax, int count) {
 		System.out.print(binMin);
 		System.out.print("-");
@@ -42,20 +48,27 @@ public class Histogram {
 		}
 		System.out.println(" "+count);
 	}
-	
+
+	/**
+	 * Print a histogram
+	 * @param bins the low and high values of the bins, ordered low to high
+	 * @param counts the number of items in each bin
+	 * Note that counts.lenght must equal bins.length - 1
+	 */
 	public static void printHistogram(double[] bins, int[] counts) {
 		for (int i=0; i<bins.length-1; i++) {
 			printBin(bins[i], bins[i+1], counts[i]);
 		}
 	}
-	
+
 	private static final double[] bins = {0, 10, 20, 30, 40};
-	
+
 	public static void main(String[] args) throws Exception {
-		Scanner scanner = new Scanner(new File("temperatures.txt"));
 		List<Double> data = new ArrayList<Double>();
-		while (scanner.hasNextDouble()) {
-			data.add(scanner.nextDouble());
+		try (Scanner scanner = new Scanner(new File("temperatures.txt"))) {
+			while (scanner.hasNextDouble()) {
+				data.add(scanner.nextDouble());
+			}
 		}
 		int[] counts = counts(data.toArray(new Double[] {}), bins);
 		printHistogram(bins, counts);
