@@ -18,6 +18,12 @@ public class LongestCommonPrefix {
 		
 	}
 	
+	/**
+	 * 
+	 * @param a a string
+	 * @param b a string
+	 * @return the longest common prefix of a and b
+	 */
 	public static String longestCommonPrefix(String a, String b) {
 		for (int i=0; i<a.length() && i<b.length(); i++) {
 			if (a.charAt(i)!=b.charAt(i)) return a.substring(0, i);
@@ -26,6 +32,10 @@ public class LongestCommonPrefix {
 		return a.length()<b.length() ? a : b;
 	}
 	
+	/**
+	 * Prints the longest common prefix of the given strings, or an explanatory message if no common string
+	 * @param in the strings to compare
+	 */
 	public static void printResult(String[] in) {
 		String prefix = longestCommonPrefix(in);
 		System.out.println(Arrays.asList(in));
