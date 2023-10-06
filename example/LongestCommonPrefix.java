@@ -12,6 +12,11 @@ public class LongestCommonPrefix {
 		if (in.length==0) return "";
 		String result = in[0];
 		for (int i=1; i<in.length; i++) {
+			if (in[i].length()<result.length()) {
+				result=in[i];
+			}
+		}
+		for (int i=0; i<in.length; i++) {
 			result = longestCommonPrefix(result, in[i]);
 		}
 		return result;
