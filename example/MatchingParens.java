@@ -1,7 +1,5 @@
 
 public class MatchingParens {
-	
-	
 	private static int MAX = 10000;
 	private char[] stack;
 	private int p; // points to the next available position in the stack
@@ -73,14 +71,15 @@ public class MatchingParens {
 	
 	private static void validateAndPrint(String s) {
 		MatchingParens mp = new MatchingParens();
-		System.out.println(s+(mp.validate(s)?" is valid.":"is not valid."));
+		System.out.println(s+(mp.validate(s)?" is valid.":" is not valid."));
 	}
 	
 	public static void main(String args[]) {
 		validateAndPrint("");
+		validateAndPrint("abc");
 		validateAndPrint("()");
 		validateAndPrint("([)]");
-		validateAndPrint("(((())))[{()}]");
+		validateAndPrint("(((())))[{()}{}]");
 	}
 
 }
