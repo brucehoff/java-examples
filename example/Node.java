@@ -1,0 +1,202 @@
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+
+public class Node implements List {
+	
+	private int i;
+	private Node next;
+
+	public int getI() {
+		return i;
+	}
+
+	public void setI(int j) {
+		this.i = j;
+	}
+
+	public Node getNext() {
+		return next;
+	}
+
+	public void setNext(Node next) {
+		this.next = next;
+	}
+
+	public Node(int i) {
+		this.i = i;
+	}
+
+	public Node append(int value) {
+		Node ll = this;
+		Node last = ll;
+		while (ll!=null) {
+			last = ll;
+			ll=ll.getNext();
+		}
+		Node node = new Node(value);
+		last.setNext(node);
+		return ll;
+	}
+	
+	public void print() {
+		for (Node ll = this; ll!=null; ll=ll.getNext()) {
+			System.out.print(ll.getI()+"->");
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		Node ll = new Node(17);
+		ll.append(3);
+		ll.append(5);
+		ll.append(-1);
+		ll.print();
+		
+		
+		
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean contains(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Iterator iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object[] toArray() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object[] toArray(Object[] a) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean add(Object e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean remove(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean containsAll(Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addAll(Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addAll(int index, Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean removeAll(Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean retainAll(Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Object get(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object set(int index, Object element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(int index, Object element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Object remove(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int indexOf(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int lastIndexOf(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ListIterator listIterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ListIterator listIterator(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List subList(int fromIndex, int toIndex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}
