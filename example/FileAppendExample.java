@@ -22,7 +22,7 @@ public class FileAppendExample {
 		
 		System.out.println("Here's the file content:");
 		try (FileInputStream is = new FileInputStream(filename)) {
-			is.transferTo(System.out);
+			// TODO copy is to System.out
 		}
 	}
 
