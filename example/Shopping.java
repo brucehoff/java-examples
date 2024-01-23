@@ -3,6 +3,7 @@ import java.util.*;
 
 
 public class Shopping {
+	
 
 	public static void main(String[] args) {
 
@@ -10,9 +11,6 @@ public class Shopping {
 		ArrayList<Items> AvailableItems = new ArrayList<>();
 
 		ArrayList<Items> ShoppingList = new ArrayList<>();
-
-		Scanner userInput = new Scanner(System.in);
-
 
 		int option = 0;
 
@@ -41,7 +39,7 @@ public class Shopping {
 
 			System.out.print("Select Option: ");
 
-			option = userInput.nextInt();
+			option = (new Scanner(System.in)).nextInt();
 
 
 			//add an item to the shopping list from the available items ArrayList
@@ -70,7 +68,7 @@ public class Shopping {
 
 				System.out.print("Please enter the number option you would like to add: ");
 
-				userOption = userInput.nextInt();
+				userOption = (new Scanner(System.in)).nextInt();
 
 				ShoppingList.add(AvailableItems.get(userOption-1));
 
@@ -87,7 +85,7 @@ public class Shopping {
 
 				System.out.print("Please enter the item you would like to remove: ");
 
-				userOption = userInput.next();
+				userOption = (new Scanner(System.in)).next();
 
 				for(int i=0; i<ShoppingList.size(); i++) {
 
@@ -149,19 +147,19 @@ public class Shopping {
 
 				System.out.print("Please enter the name of the item you would like to add: ");
 
-				itemName = userInput.next();
+				itemName = (new Scanner(System.in)).next();
 
 				System.out.print("Please enter the amount of the item (Dozen, 2 lbs, Gallon, etc): ");
 
-				itemAmount = userInput.nextLine();
+				itemAmount = (new Scanner(System.in)).nextLine();
 
 				System.out.print("Please enter the department of the item (Dairy, Produce, Sea Food, etc): ");
 
-				itemDepartment = userInput.nextLine();
+				itemDepartment = (new Scanner(System.in)).nextLine();
 
 				System.out.print("Please enter the cost of the item: ");
 
-				itemCost = userInput.nextFloat();
+				itemCost = (new Scanner(System.in)).nextFloat();
 
 				item.setName(itemName);
 
@@ -186,7 +184,7 @@ public class Shopping {
 
 				System.out.print("Please enter the item you would like to remove: ");
 
-				userOption = userInput.next();
+				userOption = (new Scanner(System.in)).next();
 
 				for(int i=0; i<AvailableItems.size(); i++) {
 
